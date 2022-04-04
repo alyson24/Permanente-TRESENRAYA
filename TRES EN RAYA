@@ -1,0 +1,80 @@
+"TRES EN RAYA"
+import random
+
+print("BIENVENIDOS AL JUEGO")
+i=1
+
+board = ["-", "-", "-",
+        "-", "-", "-",
+        "-", "-", "-"]
+        
+currentPlayer = "X"
+winner = None
+gameRunning = True
+
+def printBoard(board):
+    print(board[0] + " | " + board[1] + " | " + board[2])
+    print("----------")
+    print(board[3] + " | " + board[4] + " | " + board[5])
+    print("----------")
+    print(board[6] + " | " + board[7] + " | " + board[8])
+
+
+
+# entrada del jugador
+def playerInput(board):
+    inp = int(input("Selecciona un numero del 1-9: "))
+    if board[inp-1] == "-":
+        board[inp-1] = currentPlayer
+    else:
+        print("Por favor, elije otro casillero")
+
+
+# para empatar
+def checkHorizontle(board):
+    global empate
+    if board[0] == board[1] == board[2] and board[0] != "-":
+        empate = board[0]
+        return True
+    elif board[3] == board[4] == board[5] and board[3] != "-":
+        empate = board[3]
+        return True
+    elif board[6] == board[7] == board[8] and board[6] != "-":
+        empate = board[6]
+        return True
+
+def checkRow(board):
+    global empate
+    if board[0] == board[3] == board[6] and board[0] != "-":
+        empate = board[0]
+        return True
+    elif board[1] == board[4] == board[7] and board[1] != "-":
+        empate = board[1]
+        return True
+    elif board[2] == board[5] == board[8] and board[2] != "-":
+        empate = board[3]
+        return True
+
+
+def checkDiag(board):
+    global empate
+    if board[0] == board[4] == board[8] and board[0] != "-":
+        empate = board[0]
+        return True
+    elif board[2] == board[4] == board[6] and board[4] != "-":
+        empate = board[2]
+        return True
+
+def switchPlayer():
+    global currentPlayer
+    if currentPlayer == "X":
+        currentPlayer = "O"
+    else:
+        currentPlayer = "X"
+
+
+
+while gameRunning:
+    printBoard(board)
+    playerInput(board)
+    switchPlayer()
