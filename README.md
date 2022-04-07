@@ -1,16 +1,4 @@
 # Permanente-TRESENRAYA
 Es un tres en raya en el que ambos jugadores queden empate y así llenar todas las casillas
-el codigo debe de correr como esta en el ejemplo si selecciones la casilla 2 saldra "O" y asi sucesivamente 
-BIENVENIDOS AL JUEGO
-- | - | -
-----------
-- | - | -
-----------
-- | - | -
-Selecciona un numero del 1-9:
-Selecciona un numero del 1-9: 1
-X | - | -
-----------
-- | - | -
-----------
-- | - | -
+Lo que hicimos fue establecer un cuadrado de tres por tres en el que nuestro codigo debe de correr sucesivamente un ejemplo seria "Selecciona la casilla 1" y saldra "X" pero si en el caso "Selecciona la casilla 2" saldra el "O" y asi sucesivamente
+
